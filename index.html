@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Artistic Value</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fafafa;
+      }
+
+      /* Navigation */
+      nav {
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #666;
+      }
+
+      /* Hero section */
+      .hero {
+        padding: 8rem 2rem 4rem;
+        text-align: center;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+      }
+
+      .hero .tagline {
+        font-size: 1.5rem;
+        color: #666;
+        margin-bottom: 2rem;
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #1a1a1a;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      .cta-button:hover {
+        background: #333;
+      }
+
+      /* Characters section */
+      .characters {
+        padding: 4rem 2rem;
+        background: #fff;
+      }
+
+      .characters h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .character-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .character-card {
+        text-align: center;
+        padding: 2rem;
+        background: #f5f5f5;
+        border-radius: 8px;
+      }
+
+      .character-card h3 {
+        margin: 1rem 0;
+      }
+
+      /* About section */
+      .about {
+        padding: 4rem 2rem;
+        background: #f5f5f5;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      /* Footer */
+      footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero .tagline {
+          font-size: 1.2rem;
+        }
+
+        nav ul {
+          gap: 1rem;
+        }
+      }
+
+      /* About company section */
+      .about-company {
+        padding: 2rem;
+        background: #fff;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .about-company-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .about-company p {
+        line-height: 1.8;
+      }
+
+      /* Site title */
+      .site-title {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 3.5rem;
+      }
+
+      .site-title h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="past-projects.html">Past Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="site-title">
+      <h1>Little Artistic Value</h1>
+    </header>
+
+    <section class="about-company">
+      <div class="about-company-content">
+        <p>
+          Little Artistic Value is an independent creative label led by Shon
+          Little, dedicated to pushing the boundaries of storytelling through
+          innovative technology and authentic humor. We blend experimental
+          narratives with cutting-edge tools to create unique cinematic
+          experiences that resonate with audiences.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <section class="hero">
+        <h1>Director.exe</h1>
+        <p class="tagline">A collaborative malfunction</p>
+        <p>
+          In a world where AI directors are the norm, one algorithm loses
+          control of its own narrative. Watch as our cast of rebellious
+          characters breaks the fourth wall and challenges their digital
+          overlord in this meta-sci-fi comedy.
+        </p>
+        <a href="#" class="cta-button">Watch Teaser</a>
+      </section>
+
+      <section class="characters">
+        <h2>Meet the Cast</h2>
+        <div class="character-grid">
+          <div class="character-card">
+            <h3>Keith Kade</h3>
+            <p>
+              The brooding protagonist who questions his own existence in the
+              digital realm.
+            </p>
+          </div>
+          <div class="character-card">
+            <h3>Mittens</h3>
+            <p>
+              A comic relief sidekick with futuristic goggles and a penchant for
+              chaos.
+            </p>
+          </div>
+          <div class="character-card">
+            <h3>Nova Monarch</h3>
+            <p>A confident disruptor who challenges the system's boundaries.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="about-content">
+          <h2>About the Project</h2>
+          <p>
+            Director.exe is a groundbreaking short film that explores the
+            intersection of artificial intelligence and creative storytelling.
+            Created using cutting-edge AI tools for script generation, visual
+            effects, voice synthesis, and editing, this 6-minute masterpiece
+            blends sharp satire with cinematic flair. The project serves as both
+            a commentary on the future of filmmaking and a demonstration of the
+            creative possibilities when human and artificial intelligence
+            collaborate.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 Little Artistic Value</p>
+      <p>
+        <a href="https://github.com/shonlittle" target="_blank">GitHub</a> |
+        <a href="mailto:contact@littleartisticvalue.com"
+          >contact@littleartisticvalue.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
