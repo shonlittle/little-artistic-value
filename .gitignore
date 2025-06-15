@@ -1,0 +1,21 @@
+# Node modules (if using npm-based tools like Vite, Tailwind, etc.)
+node_modules/
+
+# Build directories (if using a static site generator or bundler)
+dist/
+build/
+
+# System/Editor files
+.DS_Store
+Thumbs.db
+*.log
+
+# VSCode settings
+.vscode/
+
+# Optional: Environment files (if used for deployment config)
+.env
+.env.*
+
+# Qodo folder
+.qodo/
