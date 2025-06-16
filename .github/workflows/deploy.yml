@@ -1,4 +1,4 @@
-name: SFTP Deploy to GoDaddy
+name: Deploy to GoDaddy via SFTP with SSH
 
 on:
   push:
@@ -7,21 +7,20 @@ on:
 
 jobs:
   deploy:
-    name: Upload via SFTP
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Deploy files over SFTP
+      - name: Upload via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
+          key: ${{ secrets.SFTP_PRIVATE_KEY }}
           port: ${{ secrets.SFTP_PORT }}
           source: "."
           target: ${{ secrets.SFTP_TARGET }}
-          rm: false
           strip_components: 1
+          rm: false
