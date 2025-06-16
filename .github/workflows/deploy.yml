@@ -1,4 +1,4 @@
-name: Deploy
+name: SFTP Deploy to GoDaddy
 
 on:
   push:
@@ -6,18 +6,22 @@ on:
       - production
 
 jobs:
-  ftp-deploy:
-    name: Upload via FTP
+  deploy:
+    name: Upload via SFTP
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy files over SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }}
+          source: "."
+          target: ${{ secrets.SFTP_TARGET }}
+          rm: false
+          strip_components: 1
