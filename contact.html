@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Little Artistic Value</title>
     <link rel="stylesheet" href="assets/styles/main.css" />
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <nav class="navbar">
@@ -54,6 +59,20 @@
                 required
               ></textarea>
             </div>
+            <!-- Honeypot: bots fill this in, humans never see it. Formspree drops any submission where _gotcha is non-empty. -->
+            <input
+              type="text"
+              name="_gotcha"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              style="position: absolute; left: -9999px"
+            />
+            <!-- Cloudflare Turnstile captcha. Site Key is public and safe to commit. -->
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAADwHez-88QygBWGD"
+            ></div>
             <button type="submit" class="submit-button">Send Message</button>
           </form>
         </div>
