@@ -1,9 +1,10 @@
-name: Deploy to GoDaddy via SFTP with SSH
+name: Deploy to GoDaddy via SFTP
 
 on:
   push:
     branches:
       - production
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -11,16 +12,16 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Upload via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          host: ${{ secrets.SFTP_HOST }}
+          server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
-          key: ${{ secrets.SFTP_PRIVATE_KEY }}
           port: ${{ secrets.SFTP_PORT }}
-          source: "."
-          target: ${{ secrets.SFTP_TARGET }}
-          strip_components: 1
-          rm: false
+          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          local_path: "./*"
+          remote_path: ${{ secrets.SFTP_TARGET }}
+          sftp_only: true
+          delete_remote_files: false
